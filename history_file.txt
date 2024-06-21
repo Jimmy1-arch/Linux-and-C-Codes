@@ -1,0 +1,157 @@
+    1  sudo apt update
+    2  sudo nano /etc/resolv.conf 
+    3  sudo apt update
+    4  sudo apt upgrade
+    5  sudo apt install gcc++
+    6  sudo apt install gcc
+    7  sudo apt install build-essentials
+    8  sudo apt install build-essential
+    9  sudo apt install gdb
+   10  init 0
+   11  gcc --version
+   12  cd "/home/rps/Desktop/C Demo/" && gcc first.c -o first && "/home/rps/Desktop/C Demo/"first
+   13  sudo su
+   14  tar xvfz node_exporter-1.7.0.linux-amd64.tar.gz 
+   15  cd node_exporter-1.7.0.linux-amd64/
+   16  sudo mv node_exporter /usr/local/bin/
+   17  sudo tee /etc/systemd/system/node_exporter.service<<EOF
+   18  [Unit]
+   19  Description=Node Exporter
+   20  After=network.target
+   21   
+   22  [Service]
+   23  User=rps
+   24  Group=rps
+   25  Type=simple
+   26  ExecStart=/usr/local/bin/node_exporter
+   27   
+   28  [Install]
+   29  WantedBy=multi-user.target
+   30  EOF
+   31  sudo systemctl daemon-reload
+   32  sudo systemctl start node_exporter
+   33  sudo systemctl enable node_exporter
+   34  sudo systemctl status node_exporter
+   35  sudo apt install gcc
+   36  sudo apt install git
+   37  sudo apt install make
+   38  sudo apt install vim
+   39  sudo apt install g++
+   40  sudo apt install gedit
+   41  sudo apt install cmake
+   42  sudo apt install g++
+   43  df -h
+   44  sudo apt update
+   45  sudo apt upgrade
+   46  sudo reboot
+   47  mkdir test
+   48  ls
+   49  cd test
+   50  pwd
+   51  mkdir test1
+   52  cd test1
+   53  cd .
+   54  cd.
+   55  cd ..
+   56  man
+   57  cd ..
+   58  man
+   59  man cd
+   60  cd test
+   61  cd test1
+   62  cat test2
+   63  cat >file1.txt
+   64  cat file1.txt
+   65  cd..
+   66  cd ..
+   67  vi file2.txt
+   68  vi jimmy.txt
+   69  vi -R jimmy.txt
+   70  cat jimmy.txt
+   71  ls
+   72  mkdir Test
+   73  cd Test
+   74  touch test1.txt
+   75  cd test1
+   76  touch test1
+   77  cd test1
+   78  ls
+   79  mkdir Test1
+   80  Test1
+   81  ls
+   82  mkdir Test
+   83  clear
+   84  ls
+   85  mkdir Test
+   86  cd Test
+   87  touch Test1.txt
+   88  ls
+   89  cat Test1.txt
+   90  ls
+   91  mkdir Sample
+   92  cd Sample
+   93  cd.
+   94  cd .
+   95  cd . .
+   96  cd ..
+   97  cd Samples
+   98  cd Sample
+   99  cat > test1.txt
+  100  cat test1.txt
+  101  cd ..
+  102  touch Test2.txt
+  103  rm Test1.txt
+  104  cd Sample
+  105  pwd
+  106  nano
+  107  dir
+  108  cd ..
+  109  vi Test3.txt
+  110  cat Test3.txt
+  111  mkdir -p Books/The Gullivers Travel
+  112  cd Books
+  113  touch The Idea of Democracy.txt
+  114  cat > The Idea of Democracy.txt
+  115  ls
+  116  rmdir Books
+  117  cd ..
+  118  mkdir -p Books1/The Idea.txt
+  119  cd Book1
+  120  cd Books1
+  121  rmdir Books1
+  122  cd ..
+  123  rmdir Books1
+  124  rm -rf Books The Idea
+  125  cd Books1
+  126  cd ..
+  127  rm -rf Books1 The Idea
+  128  cd Books1
+  129  history
+  130  touch apple
+  131  touch orange
+  132  mkdir fruits
+  133  mv apple orange fruits
+  134  touch example
+  135  cp apple another_apple
+  136  cd fruits
+  137  open .
+  138  echo "Hello,World"
+  139  history
+  140  cd ..
+  141  history > history_output.txt
+  142  man ls
+  143  sudo apt update
+  144  who
+  145  vi dogs.txt
+  146  uniq dogs.txt
+  147  sort dogs.txt | uniq
+  148  cat > dogsmore.txt
+  149  cat dogsmore.txt
+  150  ls
+  151  diff dogs.txt dogsmore.txt
+  152  cat > dogsmore.txt
+  153  diff dogs.txt dogsmore.txt
+  154  man vi
+  155  historyk
+  156  history
+  157  history > history_file.txt
