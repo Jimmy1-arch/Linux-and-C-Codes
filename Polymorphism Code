@@ -62,4 +62,33 @@ public:
         std::cout << "Department: " << department << ", Title: " << title << std::endl;
     }
 };
+// Derived class: Staff (example of further derived classes)
+class Staff : public Person {
+private:
+    std::string role;
 
+public:
+    Staff(std::string name, int id, std::string role)
+        : Person(name, id), role(role) {}
+
+    // Override the displayInfo method to include staff-specific information
+    void displayInfo() override {
+        Person::displayInfo();
+        std::cout << "Role: " << role << std::endl;
+    }
+};
+
+int main() {
+    Student student("Raju", 1, "Computer Science", 3);
+    student.displayInfo();
+    student.calculateSemesterGPA({95, 85, 99});
+
+    Faculty faculty("Harsh", 7, "Mathematics", "Teacherr");
+    faculty.displayInfo();
+    faculty.teachCourse("Linear Algebra");
+
+    Staff staff("John", 3, "Customer Support");
+    staff.displayInfo();
+
+    return 0;
+} 
