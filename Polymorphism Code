@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+// Base class: Person
+class Person {
+protected:
+    std::string name;
+    int id;
+
+public:
+    Person(std::string name, int id) : name(name), id(id) {}
+
+    // Virtual function to allow polymorphic behavior
+    virtual void displayInfo() {
+        std::cout << "Name: " << name << ", ID: " << id << std::endl;
+    }
+};
+
+// Derived class: Student
+class Student : public Person {
+private:
+    std::string major;
+    double gpa;
+
+public:
+    Student(std::string name, int id, std::string major, double gpa)
+        : Person(name, id), major(major), gpa(gpa) {}
+
+    void calculateSemesterGPA(std::vector<double> grades) {
+        double total = 0.0;
+        for (double grade : grades) {
+            total += grade;
+        }
+        gpa = total / grades.size();
+        std::cout << "Semester GPA: " << gpa << std::endl;
+    }
+
+    // Override the displayInfo method to include student-specific information
+    void displayInfo() override {
+        Person::displayInfo();
+        std::cout << "Major: " << major << ", GPA: " << gpa << std::endl;
+    }
+};
