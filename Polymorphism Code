@@ -42,3 +42,24 @@ public:
         std::cout << "Major: " << major << ", GPA: " << gpa << std::endl;
     }
 };
+// Derived class: Faculty
+class Faculty : public Person {
+private:
+    std::string department;
+    std::string title;
+
+public:
+    Faculty(std::string name, int id, std::string department, std::string title)
+        : Person(name, id), department(department), title(title) {}
+
+    void teachCourse(std::string courseName) {
+        std::cout << "Teaching " << courseName << " in " << department << std::endl;
+    }
+
+    // Override the displayInfo method to include faculty-specific information
+    void displayInfo() override {
+        Person::displayInfo();
+        std::cout << "Department: " << department << ", Title: " << title << std::endl;
+    }
+};
+
