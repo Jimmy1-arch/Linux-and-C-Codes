@@ -1,0 +1,129 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+void startGame();
+void pathA();
+void pathB();
+void pathC();
+
+int main() {
+    
+    char playAgain;
+    do {
+        startGame();
+        cout<<"\n";
+        cout << "Do you want to play again? (Y/N): ";
+        cin >> playAgain;
+        cout << endl;
+    } while (playAgain == 'Y' );
+    return 0;
+}
+
+void startGame() {
+    string name;
+    string choice;
+    
+    cout << "Welcome, traveler ! to 'JIMMY'S SURVIVAL GAME'\n\nWhat's will be your in-game name? ";
+    getline(cin, name);
+    cout << "Greetings, " << name << ". You find yourself standing at a crossroads.Choose a path to move forward.\n\n";
+    cout << "Type 'A', 'B', or 'C' as your choice inputs.\n";
+    cout << "A. Path A\n";
+    cout << "B. Path B\n";
+    cout << "C. Path C\n";
+    cout << "Enter your choice (A/B/C): ";
+    getline(cin, choice);
+
+    // Convert choice to uppercase for easier comparison
+    transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
+
+    if (choice == "A") {
+        pathA();
+    } else if (choice == "B") {
+        pathB();
+    } else if (choice == "C") {
+        pathC();
+    } else {
+        cout << "Invalid choice. Please restart the game." << endl;
+    }
+}
+
+void pathA() {
+    string choice;
+    cout << "You chose Path A. You encounter a river." << endl;
+    cout << "Do you want to: " << endl;
+    cout << "A. Swim across" << endl;
+    cout << "B. Build a bridge" << endl;
+    cout << "C. Take a boat"  << endl;
+    cout << "Enter your choice (A/B/C): ";
+    getline(cin, choice);
+
+    // Convert choice to uppercase for easier comparison
+    transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
+
+    if (choice == "A") {
+        cout << "You tried to swim across but got swept away by the current. \nGame Over." << endl;
+    } else if (choice == "B") {
+        cout << "You successfully built a bridge and crossed the river. \nCongarts ! You win!" << endl;
+    } else if (choice == "C") {
+         cout << "Boat had a hole and it got sinked halfway. \nGame Over." << endl; 
+    }
+    else {
+        cout << "Invalid choice. Please restart the game." << endl;
+    }
+}
+
+void pathB() {
+    string choice;
+    cout << "You chose Path B. You encounter a mountain." << endl;
+    cout << "Do you want to: " << endl;
+    cout << "A. Climb the mountain." << endl;
+    cout << "B. Go around the mountain." << endl;
+    cout << "C. Wait for others to come." << endl;
+    cout << "Enter your choice (A/B/C): ";
+    getline(cin, choice);
+
+    // Convert choice to uppercase for easier comparison
+    transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
+
+    if (choice == "A") {
+        cout << "You successfully climbed the mountain and found a treasure.\nCongrats ! You win!" << endl;
+    } else if (choice == "B") {
+        cout << "You got lost finding your way around the mountain. \nGame Over." << endl;
+    } else if (choice == "C"  ) {
+        cout << "Nobody came and later you got eaten by some predators.\nGame Over." << endl; 
+    }
+    else {
+        cout << "Invalid choice. Please restart the game." << endl;
+    }
+}
+
+void pathC() {
+    string choice;
+    cout << "You chose Path C. You encounter a forest." << endl;
+    cout << "Do you want to: " << endl;
+    cout << "A. Go through the forest" << endl;
+    cout << "B. Turn back" << endl;
+    cout << "C. Build a tent for rest and do camp fire." <<endl;
+    
+    cout << "Enter your choice (A/B/C): ";
+    getline(cin, choice);
+
+    // Convert choice to uppercase for easier comparison
+    transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
+
+    if (choice == "A") {
+        cout << "You safely navigated through the forest and reached your destination. \nCongrats ! You win!" << endl;
+    } else if (choice == "B") {
+        cout << "You turned back and got lost. \nGame Over." << endl;
+    }else if (choice == "C") {
+        cout << "Later that night due to winds the buring firewoods's fire caught the tent and you died.  \nGame Over." << endl; 
+    }
+    else {
+        cout << "Invalid choice. Please restart the game." << endl;
+    }
+    
+    
+}
